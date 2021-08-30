@@ -1,6 +1,7 @@
 package com.example.notepad.screens.start
 
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -49,7 +50,7 @@ class StartFragment : Fragment() {
                 if (inputEmail.isNotEmpty() && inputPassword.isNotEmpty()){
                     EMAIL = inputEmail
                     PASSWORD = inputPassword
-                    mViewModel.initDatabase(TYPE_FIREBASE){
+                    mViewModel.initDatabase(TYPE_FIREBASE) {
                         APP_ACTIVITY.navController.navigate(R.id.action_startFragment_to_mainFragment)
                     }
                 } else {
