@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.example.notepad.MainActivity
 import com.example.notepad.R
 import com.example.notepad.databinding.FragmentNoteBinding
 import com.example.notepad.models.AppNote
@@ -32,8 +33,8 @@ class NoteFragment : Fragment() {
 
     private fun initialization() {
         setHasOptionsMenu(true)
-         mBinding.noteText.text = mCurrentNote.text
-         mBinding.noteName.text = mCurrentNote.name
+        mBinding.noteText.text = mCurrentNote.text
+        mBinding.noteName.text = mCurrentNote.name
         mViewModel = ViewModelProvider(this).get(NoteFragmentViewModel::class.java)
     }
 

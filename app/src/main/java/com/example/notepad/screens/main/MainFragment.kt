@@ -2,14 +2,20 @@ package com.example.notepad.screens.main
 
 import android.os.Bundle
 import android.view.*
+import android.view.View.inflate
+import androidx.core.content.res.ColorStateListInflaterCompat.inflate
+import androidx.core.content.res.ComplexColorCompat.inflate
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
+import com.example.notepad.MainActivity
 import com.example.notepad.R
+import com.example.notepad.databinding.ActivityMainBinding.inflate
 import com.example.notepad.databinding.FragmentMainBinding
 import com.example.notepad.models.AppNote
 import com.example.notepad.utilits.APP_ACTIVITY
+import com.example.notepad.utilits.AppPreference
 
 class MainFragment : Fragment() {
     private var _binding:FragmentMainBinding? = null
@@ -72,6 +78,7 @@ class MainFragment : Fragment() {
         when(item.itemId){
             R.id.btn_exit -> {
                 mViewModel.signOut()
+                AppPreference.setInitUser(false)
                 APP_ACTIVITY.navController.navigate(R.id.action_mainFragment_to_startFragment)
             }
         }

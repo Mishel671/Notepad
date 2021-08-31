@@ -3,10 +3,12 @@ package com.example.notepad
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
+import androidx.core.view.isInvisible
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.notepad.databinding.ActivityMainBinding
 import com.example.notepad.utilits.APP_ACTIVITY
+import com.example.notepad.utilits.AppPreference
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         navController = Navigation.findNavController(this, R.id.nav_host_fragment)
         setSupportActionBar(mToolbar)
         title = getString(R.string.title)
+        AppPreference.getPreference(this)
     }
 
     override fun onDestroy() {
